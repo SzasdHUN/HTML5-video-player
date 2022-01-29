@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="//db.onlinewebfonts.com/c/0b28d43e90a11a93d935b305ff2cefb2?family=Font+Awesome+5+Pro" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/free.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 video player</title>
+    <script></script>
+</head>
+<body>
+    <div class="container">
+        <div class="c-video">
+            <video id="video" src=" put file path here "></video>
+            <div class="controls">
+                <div class="color-bar">
+                    <div class="color-juice"></div>
+                </div>
+                <div class="inner-controls">
+                    <div class="buttons">
+                        <button id="backward" class="skipper btn-color" data-skip="-5" title="skip backward 5s"></button>
+                        <button id="play-pause" title="play/pause" class="btn-color"></button>
+                        <button id="forward" class="skipper btn-color" data-skip="5" title="skip forward 5s"></button>
+                        <button id="mute-button" class="btn-color" title="mute/unmute"></button>
+                        <button id="loop" title="loop"></button>
+                        <button id="fullscreen" class="btn-color" title="fullscreen"></button>
+                    </div>
+                    <p id="timer">0:00 / 0:00</p>
+                    <div class="sliders">
+                        <div class="volume-container">
+                            <p id="vol-display" class="range-dis">100%</p>
+                            <input type="range" name="volume" class="player-slider volume" min=0 max=1 step=0.01 value=1 title="volume slider" id="vol-slider">
+                            <button id="reset-vol" title="reset volume slider"></button>
+                        </div>
+                        <div class="speed">
+                            <p id="spe-display" class="range-dis">1x</p>
+                            <input type="range" name="speed" class="player-slider speed speed-range" min=0.25 max=2 step=0.25 value=1 title="playback speed slider">
+                            <button id="reset-speed" title="reset playback speed slider"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

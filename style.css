@@ -1,0 +1,284 @@
+@import url(//db.onlinewebfonts.com/c/0b28d43e90a11a93d935b305ff2cefb2?family=Font+Awesome+5+Pro);
+
+:root {
+    --loop__color: #2a9bf1;
+    --line__color:#168fe9;
+    --hidden__line_thickness: -10px;
+    --btn-color: #ff0000;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: #ddd;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #777;
+    height: 100vh;
+}
+
+#video {
+    width: 100%;
+}
+
+.c-video {
+    width: 100%;
+    max-width: 100vmin; 
+    max-height: 100vmin;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-video:hover .controls{
+    transform: translateY(0);
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.37);
+    transform: translateY(100%) translateY(var(--hidden__line_thickness));
+    transition: all 200ms;
+}
+
+.buttons {
+    padding: 10px;
+}
+
+button {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.buttons #play-pause:before {
+    content: '\f04b'; /*play button*/ 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #ccc;
+    -webkit-font-smoothing: antialiesed;
+}
+
+.buttons #play-pause.pause:before {
+    content: "\f04c"; /*pasue button*/
+}
+
+.buttons #play-pause.restart:before {
+    content: "\f2ea"; /*restart button*/
+}
+
+.color-bar {
+    height: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #909090;
+    cursor: pointer;
+}
+
+.color-juice {
+    height: 10px;
+    background: var(--line__color);
+    cursor: pointer;
+    width: 0%;
+}
+
+#timer {
+    color: #fff;
+    width: 200px;
+}
+
+.player-slider{
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.buttons, #timer{
+    display: inline-flexbox;
+}
+
+.volume-conrainer, .speed {
+    display: flex;
+}
+
+.volume, .speed, #vol-display, #spe-display{
+    display: inline;
+}
+
+#vol-display, #spe-display{
+    width: 47px;
+    align-items: center;
+    display: inline-flex;
+}
+
+button#reset-vol, button#reset-speed{
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+button#reset-vol:before, button#reset-speed:before{
+    content: "\f3e5"; /*reset button f2f1*/
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 20px;
+    color: #ccc;
+}
+
+
+button#backward:before{
+    content: "\f04a"; /*skip back button*/
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #ccc;
+}
+
+button#forward:before{
+    content: "\f04e ";/*skip for button*/
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #ccc;
+}
+
+button#loop:before{
+    content: "\f2f1";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #ccc;
+}
+
+button#loop.loop:before{
+    color: var(--loop__color);
+}
+
+input[type=range]:focus{
+    outline: none;
+}
+
+/*
+input[type=range]::-moz-range-track{
+    cursor: pointer;
+    background: #000;
+}
+
+input[type=range]::-moz-range-thumb{
+    -moz-appearance: none;
+    height: 10px;
+    width: 10px;
+    background: #FFA500;
+}
+input[type=range]::-webkit-slider-runnable-track{
+    cursor: pointer;
+    -moz-appearance: none;
+    background: transparent;
+    color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 10px;
+    width: 10px;
+    background: #FFA500;
+}
+*/
+
+#mute-button:before{
+    content: "\f028";/*mute for button f6a8*/  /*f028*/
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #ccc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mute-button.muted:before{
+    content: "\f6a9";
+}
+
+#mute-button.hover{
+    color: #f00;
+}
+
+.inner-controls{
+    display: flex;
+}
+
+#fullscreen:before{
+    content: "\f065";/*fullscreen off for button*/
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #ccc;
+}
+
+#fullscreen.full:before{
+    content: "\f066";/*fullscreen on for button*/
+}
+
+
+.btn-color:before{
+    color: var(--btn-color);
+}
+.range-dis{
+    height: 0px;
+}
+
+#video.full{
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-video.full {
+    width: 100%;
+    height: 100%;
+    max-width: unset; 
+    max-height: unset;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    margin-right: 1px;
+    margin-left: 1px;
+}
